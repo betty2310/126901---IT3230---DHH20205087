@@ -18,7 +18,7 @@ typedef struct Node
     struct Node *next;
 } Node;
 
-void addStudent(Node **head, struct student sv) //student add default by grade
+void addStudent(Node **head, struct student sv) //student add default sorted by grade
 {
     Node *cur = (Node *)malloc(sizeof(Node));
     if (*head == NULL)
@@ -46,10 +46,21 @@ void addStudent(Node **head, struct student sv) //student add default by grade
     new_sv->next = cur->next;
     cur->next = new_sv;
     return;
-
-    return;
 }
 
+Node *findStudentById(Node *head, char *Id) {
+    Node *p = (Node *)malloc(sizeof(Node));
+    p = head;
+    while(p!=NULL) {
+        if(strcmp(p->Data.id, Id) == 0) 
+        {
+            return p;
+        }
+        p = p->next;
+    }
+    free(p);
+    return NULL;
+}
 void printList(Node *head)
 {
     for (Node *cur = head; cur != NULL; cur = cur->next)
@@ -63,7 +74,7 @@ int main(int argc, char *argv[])
     struct student sv1 = {"20201234", "Pham Hong An", 12};
     struct student sv2 = {"20205091", "Le Phuong Anh", 13};
     struct student sv3 = {"20201434", "Duong Huu Huynh", 9};
-    struct student sv4 = {"20204354", "Vu Hoang ANh", 11};
+    struct student sv4 = {"20204354", "Vu Hoang Anh", 11};
     struct student sv5 = {"20206873", "Hoang Khai Nga", 10};
     struct student sv6 = {"20205348", "Le Hong Van", 12};
     struct student sv7 = {"20201234", "Bac Kieu Phong", 8};
@@ -78,7 +89,14 @@ int main(int argc, char *argv[])
     addStudent(&head, sv7);
     addStudent(&head, sv8);
 
-    printList(head);
-
+    // printList(head);
+    char cId[ID_LENGTH];
+    printf("Nhap id: ");
+    scanf("%s", cId);
+    Node *ptr = findStudentById(head, cId);
+    if(ptr == NULL)
+        printf("Can not find this Id in linked list!\n");
+    else 
+        printf("Find student!\nName: %s\tGrade: %d\n", ptr->Data.name, ptr->Data.grade);
     return 0;
 }
