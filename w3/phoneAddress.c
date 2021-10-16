@@ -49,8 +49,22 @@ void insertPos(Node **head, struct Infor sv, int pos) //insert with pos
     nNode->next = cur->next;
     cur->next = nNode;
 }
-void removePos() //remove node with pos
+void removePos(Node **head, int pos) //remove node with pos
 {
+    Node *cur = *head;
+    if(pos == 0) //delete first index node
+    {
+        *head = cur->next;
+        free(cur);
+        return;
+    }
+    
+    for (int i = 0; cur->next != NULL && i < pos - 1;++i) {
+        cur = cur->next;
+    }
+    Node *after = cur->next->next;
+    cur->next = after;
+    return;
 }
 void traversing(Node *head)
 {
@@ -81,6 +95,7 @@ int main(int argc, char *argv[])
     insertPos(&head, sv3, 2);
     push(&head, sv4);
     insertPos(&head, sv5, 3);
+    removePos(&head, 2);
     traversing(head);
 
     return 0;
