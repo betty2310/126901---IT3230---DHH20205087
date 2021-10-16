@@ -74,11 +74,28 @@ void traversing(Node *head)
     }
 }
 
-void freeAll()
+void freeAll(Node **head)
 {
+    Node *cur = *head;
+    while(cur!=NULL) {
+        (*head) = (*head)->next;
+        free(cur);
+        cur = *head;
+    }
+    return;
 }
-void reverseList()
+void reverseList(Node **head)
 {
+    Node* prev = NULL;
+    Node* cur = *head;
+    Node* next = NULL;
+    while (cur != NULL) {
+        next = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = next;
+    }
+    *head = prev;
 }
 
 int main(int argc, char *argv[])
@@ -96,6 +113,9 @@ int main(int argc, char *argv[])
     push(&head, sv4);
     insertPos(&head, sv5, 3);
     removePos(&head, 2);
+    insertPos(&head, sv6, 2);
+    //freeAll(&head);
+    reverseList(&head);
     traversing(head);
 
     return 0;
