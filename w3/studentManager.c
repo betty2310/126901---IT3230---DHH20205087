@@ -80,6 +80,16 @@ void removeStudentById(Node **head, char *Id)
     return;
 }
 
+void changeGradeStudentById(Node **head, char *Id, int nGr) 
+{
+    Node *cur = *head;
+    while (cur->next != NULL && strcmp(cur->Data.id, Id)!=0)
+    {
+        cur = cur->next;
+    }
+    cur->Data.grade = nGr;
+    return;
+}
 void printList(Node *head)
 {
     for (Node *cur = head; cur != NULL; cur = cur->next)
@@ -122,5 +132,14 @@ int main(int argc, char *argv[])
     scanf("%s", rId);
     removeStudentById(&head, rId);
     printList(head);
+    printf("\n<*------CHANGE GRADE STUDENT------*>\nNhap id: ");
+    char gId[ID_LENGTH];
+    int nGr;
+    scanf("%s", gId);
+    printf("Enter new grade: ");
+    scanf("%d", &nGr);
+    changeGradeStudentById(&head, gId, nGr);
+    printList(head);
+ 
     return 0;
 }
