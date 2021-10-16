@@ -32,8 +32,22 @@ void push(Node **head, struct Infor sv) //insert in first index
     *head = nNode;
     return;
 }
-void insertPos() //insert with pos
+void insertPos(Node **head, struct Infor sv, int pos) //insert with pos
 {
+    if (pos == 0)
+    {
+        push(head, sv);
+        return;
+    }
+    Node *cur = *head;
+    // find the previous node of pos
+    for (int i = 0; cur->next != NULL && i < pos - 1;++i) {
+        cur = cur->next;
+    }
+    Node *nNode = (Node *)malloc(sizeof(Node));
+    nNode->data = sv;
+    nNode->next = cur->next;
+    cur->next = nNode;
 }
 void removePos() //remove node with pos
 {
@@ -42,8 +56,15 @@ void traversing(Node *head)
 {
     for (Node *cur = head; cur != NULL; cur = cur->next)
     {
-        printf("%s\n%s\n%s\n", cur->data.name, cur->data.email, cur->data.phoneNumber);
+        printf("%s %s %s\n", cur->data.name, cur->data.email, cur->data.phoneNumber);
     }
+}
+
+void freeAll()
+{
+}
+void reverseList()
+{
 }
 
 int main(int argc, char *argv[])
@@ -51,8 +72,15 @@ int main(int argc, char *argv[])
     Node *head = NULL;
     struct Infor sv1 = {"Duong Huu Huynh", "huynhduong@xyz.com", "034484"};
     struct Infor sv2 = {"Le Phuong Anh", "anhphuong@abc.com", "01234"};
+    struct Infor sv3 = {"Le Hong Hanh", "hanhhong@mnv.com", "01234"};
+    struct Infor sv4 = {"Hoang Khai Nga", "khainga@xyz.com", "034484"};
+    struct Infor sv5 = {"Nguyen Van Hong", "hongnguyen@abc.com", "01234"};
+    struct Infor sv6 = {"Ta Van Thien", "thienvan@mnv.com", "09343"};
     push(&head, sv1);
     push(&head, sv2);
+    insertPos(&head, sv3, 2);
+    push(&head, sv4);
+    insertPos(&head, sv5, 3);
     traversing(head);
 
     return 0;
