@@ -61,6 +61,25 @@ Node *findStudentById(Node *head, char *Id) {
     free(p);
     return NULL;
 }
+
+void removeStudentById(Node **head, char *Id) 
+{
+    Node *cur = *head;
+    if(!(strcmp(cur->Data.id, Id))) 
+    {
+        *head = cur->next;
+        return;
+    }
+    // find prev index 
+    while (cur->next != NULL && strcmp(cur->next->Data.id, Id)!=0)
+    {
+        cur = cur->next;
+    }
+    Node *nNext = cur->next->next;
+    cur->next = nNext;
+    return;
+}
+
 void printList(Node *head)
 {
     for (Node *cur = head; cur != NULL; cur = cur->next)
@@ -89,14 +108,19 @@ int main(int argc, char *argv[])
     addStudent(&head, sv7);
     addStudent(&head, sv8);
 
-    // printList(head);
-    char cId[ID_LENGTH];
-    printf("Nhap id: ");
-    scanf("%s", cId);
-    Node *ptr = findStudentById(head, cId);
+    printList(head);
+    char fId[ID_LENGTH];
+    printf("\n<*------FIND STUDENT------*>\nNhap id: ");
+    scanf("%s", fId);
+    Node *ptr = findStudentById(head, fId);
     if(ptr == NULL)
         printf("Can not find this Id in linked list!\n");
     else 
         printf("Find student!\nName: %s\tGrade: %d\n", ptr->Data.name, ptr->Data.grade);
+    printf("\n<*------REMOVE STUDENT------*>\nNhap id: ");
+    char rId[ID_LENGTH];
+    scanf("%s", rId);
+    removeStudentById(&head, rId);
+    printList(head);
     return 0;
 }
