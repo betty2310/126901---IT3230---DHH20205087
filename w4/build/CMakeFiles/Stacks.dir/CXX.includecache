@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/betty/Dev/CProgramming-IT3230-126901/w4/header.h
+
+/home/betty/Dev/CProgramming-IT3230-126901/w4/main.cpp
+iostream
+-
+header.h
+/home/betty/Dev/CProgramming-IT3230-126901/w4/header.h
+
+/home/betty/Dev/CProgramming-IT3230-126901/w4/source.cpp
+
