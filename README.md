@@ -5,7 +5,7 @@
 * [x] Tuần 1
 * [x] Tuần 2
 * [x] Tuần 3
-* [ ] Tuàn 4
+* [x] Tuần 4
 * [ ] Tuần 5
 * [ ] Tuần 6
 * [ ] Tuần 7
