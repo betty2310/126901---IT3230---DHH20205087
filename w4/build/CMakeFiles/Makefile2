@@ -858,12 +858,12 @@ CMakeFiles/ContinuousBuild.dir/clean:
 CMakeFiles/Stacks.dir/all:
 	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/depend
 	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/betty/Dev/CProgramming-IT3230-126901/w4/build/CMakeFiles --progress-num=1,2,3 "Built target Stacks"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/betty/Dev/CProgramming-IT3230-126901/w4/build/CMakeFiles --progress-num=1,2 "Built target Stacks"
 .PHONY : CMakeFiles/Stacks.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Stacks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/betty/Dev/CProgramming-IT3230-126901/w4/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/betty/Dev/CProgramming-IT3230-126901/w4/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Stacks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/betty/Dev/CProgramming-IT3230-126901/w4/build/CMakeFiles 0
 .PHONY : CMakeFiles/Stacks.dir/rule

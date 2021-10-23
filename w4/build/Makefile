@@ -547,33 +547,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-source.o: source.cpp.o
-
-.PHONY : source.o
-
-# target to build an object file
-source.cpp.o:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/source.cpp.o
-.PHONY : source.cpp.o
-
-source.i: source.cpp.i
-
-.PHONY : source.i
-
-# target to preprocess a source file
-source.cpp.i:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/source.cpp.i
-.PHONY : source.cpp.i
-
-source.s: source.cpp.s
-
-.PHONY : source.s
-
-# target to generate assembly for a file
-source.cpp.s:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/source.cpp.s
-.PHONY : source.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -617,9 +590,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... source.o"
-	@echo "... source.i"
-	@echo "... source.s"
 .PHONY : help
 
 
