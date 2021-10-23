@@ -3,24 +3,7 @@
 #include <string.h>
 
 #include "stack.h"
-
-void solve(char s)
-{
-    char a = peek();
-    pop();
-    char b = peek();
-    pop();
-    int c;
-    if (s == '+')
-        c = (a - '0') + (b - '0');
-    if (s == '-')
-        c = (a - '0') - (b - '0');
-    if (s == 'x')
-        c = (a - '0') * (b - '0');
-    if (s == '/')
-        c = (a - '0') / (b - '0');
-    push(c + '0');
-}
+#include "postfix.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +14,7 @@ int main(int argc, char *argv[])
         if (s[i] <= '9' && s[i] >= '0')
             push(s[i]);
         else
-            solve(s[i]);
+            postfix(s[i]);
     }
 
     //display();
