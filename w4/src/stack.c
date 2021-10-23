@@ -1,15 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-typedef struct Node
-{
-    int data;
-    struct Node* link;
-} Node ;
- 
-Node* top;
- 
-void push(int data)
+#include "stack.h"
+
+void push(char data)
 {
     struct Node* temp;
     temp = (Node *)malloc(sizeof(Node));
@@ -26,8 +19,7 @@ int isEmpty()
 {
     return top == NULL;
 }
- 
-int peek()
+char peek()
 {
     if (!isEmpty())
         return top->data;
@@ -50,7 +42,6 @@ void pop()
         free(temp);
     }
 }
- 
 void display()
 {
     Node* temp;
@@ -64,28 +55,8 @@ void display()
         temp = top;
         while (temp != NULL)
         {
-            printf("%d -> ", temp->data);
+            printf("%c ", temp->data);
             temp = temp->link;
         }
     }
-}
- 
-int main()
-{
-    push(11);
-    push(22);
-    push(33);
-    push(44);
- 
-    display();
-
-    printf("\nTop element is: %d\n", peek());
-
-    pop();
-    pop();
- 
-    display();
-
-    printf("\nTop element is: %d\n", peek());
-    return 0;
 }

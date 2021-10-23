@@ -289,9 +289,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "Stacks::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Stacks-Debug-94c345eb5e1b3548cbfc.json",
-					"name" : "Stacks",
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-ca0293cbc300035b0fd6.json",
+					"name" : "main",
 					"projectIndex" : 0
 				}
 			]

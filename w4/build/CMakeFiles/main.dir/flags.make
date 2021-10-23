@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/betty/Dev/CProgramming-IT3230-126901/w4/include 
 

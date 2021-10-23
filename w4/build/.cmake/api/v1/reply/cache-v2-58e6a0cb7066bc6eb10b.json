@@ -1262,54 +1262,6 @@
 			"value" : "-l"
 		},
 		{
-			"name" : "CPACK_BINARY_7Z",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_BUNDLE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_CYGWIN",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
 			"name" : "CPACK_BINARY_DEB",
 			"properties" : 
 			[
@@ -1324,22 +1276,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "OFF"
-		},
-		{
-			"name" : "CPACK_BINARY_DRAGNDROP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CPACK_BINARY_FREEBSD",
@@ -1388,70 +1324,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "OFF"
-		},
-		{
-			"name" : "CPACK_BINARY_NUGET",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_OSXX11",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_PACKAGEMAKER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_PRODUCTBUILD",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CPACK_BINARY_RPM",
@@ -1548,70 +1420,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "ON"
-		},
-		{
-			"name" : "CPACK_BINARY_WIX",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_ZIP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_SOURCE_7Z",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_SOURCE_CYGWIN",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CPACK_SOURCE_RPM",

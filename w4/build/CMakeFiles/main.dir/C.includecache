@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/stack.h
+
+/home/betty/Dev/CProgramming-IT3230-126901/w4/src/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stack.h
+/home/betty/Dev/CProgramming-IT3230-126901/w4/src/stack.h
+

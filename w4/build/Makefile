@@ -157,19 +157,6 @@ NightlyMemCheck/fast:
 .PHONY : NightlyMemCheck/fast
 
 #=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest/fast:
-	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
-
-#=============================================================================
 # Target rules for targets named ContinuousConfigure
 
 # Build rule for target.
@@ -181,6 +168,19 @@ ContinuousConfigure: cmake_check_build_system
 ContinuousConfigure/fast:
 	$(MAKE) -f CMakeFiles/ContinuousConfigure.dir/build.make CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousBuild
+
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) -f CMakeFiles/ContinuousBuild.dir/build.make CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
 
 #=============================================================================
 # Target rules for targets named NightlyConfigure
@@ -324,6 +324,32 @@ Continuous: cmake_check_build_system
 Continuous/fast:
 	$(MAKE) -f CMakeFiles/Continuous.dir/build.make CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named Nightly
@@ -494,58 +520,59 @@ ContinuousSubmit/fast:
 	$(MAKE) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
-#=============================================================================
-# Target rules for targets named ContinuousBuild
+src/main.o: src/main.c.o
 
-# Build rule for target.
-ContinuousBuild: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ContinuousBuild
-.PHONY : ContinuousBuild
-
-# fast build rule for target.
-ContinuousBuild/fast:
-	$(MAKE) -f CMakeFiles/ContinuousBuild.dir/build.make CMakeFiles/ContinuousBuild.dir/build
-.PHONY : ContinuousBuild/fast
-
-#=============================================================================
-# Target rules for targets named Stacks
-
-# Build rule for target.
-Stacks: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Stacks
-.PHONY : Stacks
-
-# fast build rule for target.
-Stacks/fast:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/build
-.PHONY : Stacks/fast
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.o
+.PHONY : src/main.c.o
 
-main.i: main.cpp.i
+src/main.i: src/main.c.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.i
+.PHONY : src/main.c.i
 
-main.s: main.cpp.s
+src/main.s: src/main.c.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Stacks.dir/build.make CMakeFiles/Stacks.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
+.PHONY : src/main.c.s
+
+src/stack.o: src/stack.c.o
+
+.PHONY : src/stack.o
+
+# target to build an object file
+src/stack.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/stack.c.o
+.PHONY : src/stack.c.o
+
+src/stack.i: src/stack.c.i
+
+.PHONY : src/stack.i
+
+# target to preprocess a source file
+src/stack.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/stack.c.i
+.PHONY : src/stack.c.i
+
+src/stack.s: src/stack.c.s
+
+.PHONY : src/stack.s
+
+# target to generate assembly for a file
+src/stack.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/stack.c.s
+.PHONY : src/stack.c.s
 
 # Help Target
 help:
@@ -558,8 +585,8 @@ help:
 	@echo "... package_source"
 	@echo "... edit_cache"
 	@echo "... NightlyMemCheck"
-	@echo "... NightlyTest"
 	@echo "... ContinuousConfigure"
+	@echo "... ContinuousBuild"
 	@echo "... NightlyConfigure"
 	@echo "... NightlyMemoryCheck"
 	@echo "... ExperimentalTest"
@@ -571,6 +598,8 @@ help:
 	@echo "... ContinuousCoverage"
 	@echo "... ExperimentalConfigure"
 	@echo "... Continuous"
+	@echo "... NightlyTest"
+	@echo "... main"
 	@echo "... Nightly"
 	@echo "... NightlySubmit"
 	@echo "... NightlyStart"
@@ -585,11 +614,12 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
-	@echo "... ContinuousBuild"
-	@echo "... Stacks"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/stack.o"
+	@echo "... src/stack.i"
+	@echo "... src/stack.s"
 .PHONY : help
 
 
