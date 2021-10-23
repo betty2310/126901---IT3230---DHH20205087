@@ -4,6 +4,24 @@
 
 #include "stack.h"
 
+void solve(char s)
+{
+    char a = peek();
+    pop();
+    char b = peek();
+    pop();
+    int c;
+    if (s == '+')
+        c = (a - '0') + (b - '0');
+    if (s == '-')
+        c = (a - '0') - (b - '0');
+    if (s == 'x')
+        c = (a - '0') * (b - '0');
+    if (s == '/')
+        c = (a - '0') / (b - '0');
+    push(c + '0');
+}
+
 int main(int argc, char *argv[])
 {
     char *s = argv[1];
@@ -11,55 +29,13 @@ int main(int argc, char *argv[])
     for (int i = 0; i < len; i++)
     {
         if (s[i] <= '9' && s[i] >= '0')
-        {
             push(s[i]);
-        }
         else
-        {
-            switch (s[i])
-            {
-            case '+':
-            {
-                char a = peek();
-                pop();
-                char b = peek();
-                pop();
-                int c = (a - '0') + (b - '0');
-                push(c);
-                break;
-            }
-                //     char a = peek();
-                //     pop();
-                //     char b = peek();
-                //     pop();
-                //     int c = (a - '0') - (b - '0');
-                //     push(c);
-                //     break;
-                // case 'x':
-                //     char a = peek();
-                //     pop();
-                //     char b = peek();
-                //     pop();
-                //     int c = (a - '0') * (b - '0');
-                //     push(c);
-                //     break;
-                // case '/':
-                //     char a = peek();
-                //     pop();
-                //     char b = peek();
-                //     pop();
-                //     int c = (a - '0') / (b - '0');
-                //     push(c);
-                //     break;
-
-            default:
-                break;
-            }
-        }
+            solve(s[i]);
     }
 
-    display();
+    //display();
 
-    printf("\nTop element is: %c\n", peek());
+    printf("\nResult: %d\n", peek() - '0');
     return 0;
 }
