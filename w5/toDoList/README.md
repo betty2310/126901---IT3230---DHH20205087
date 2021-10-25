@@ -13,3 +13,20 @@ the list.
 
 * The time field can be the system time at 
 the moment of input.
+
+# Following instruction of project
+
+```bash
+.
+├── build
+│ 
+├── CMakeLists.txt
+├── include
+│  ├── queue.h
+│  └── toDo.h
+├── README.md
+└── src
+   ├── main.c
+   ├── queue.c
+   └── toDo.c
+```
