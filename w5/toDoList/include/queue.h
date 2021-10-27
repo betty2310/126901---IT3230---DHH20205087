@@ -28,3 +28,5 @@ int isQueueFull(struct Queue *q);
 void enQueue(struct Queue *q, ToDo k);
 
 void deQueue(struct Queue *q);
+
+extern struct Queue *q;
