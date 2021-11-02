@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/include  -g   -o CMakeFiles/todolist.dir/src/main.c.o   -c /home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/main.c",
+  "file": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/main.c"
+},
+{
+  "directory": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/include  -g   -o CMakeFiles/todolist.dir/src/queue.c.o   -c /home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/queue.c",
+  "file": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/queue.c"
+},
+{
+  "directory": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/include  -g   -o CMakeFiles/todolist.dir/src/todo.c.o   -c /home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/todo.c",
+  "file": "/home/betty/Dev/CProgramming-IT3230-126901/w5/todolist/src/todo.c"
+}
+]
