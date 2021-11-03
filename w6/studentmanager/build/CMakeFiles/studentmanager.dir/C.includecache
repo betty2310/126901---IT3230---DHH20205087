@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/student.h
+
+/home/betty/Dev/CProgramming-IT3230-126901/w6/studentmanager/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+student.h
+/home/betty/Dev/CProgramming-IT3230-126901/w6/studentmanager/student.h
+
+/home/betty/Dev/CProgramming-IT3230-126901/w6/studentmanager/student.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+student.h
+/home/betty/Dev/CProgramming-IT3230-126901/w6/studentmanager/student.h
+
