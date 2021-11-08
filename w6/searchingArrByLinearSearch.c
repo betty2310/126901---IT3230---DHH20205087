@@ -38,7 +38,6 @@ int main(int argc, char* argv[])
     int key;
     printf("Enter a number to search: ");
     scanf("%d", &key);
-
     int pos = linearSentinelSearch(arr, 10, key);
     return 0;
 }
