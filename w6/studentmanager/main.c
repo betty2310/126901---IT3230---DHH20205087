@@ -35,6 +35,14 @@ int main(int argc, char *argv[])
         printf("Can not find this Id in linked list!\n");
     else 
         printf("Find student!\nName: %s\tGrade: %d\n", ptr->Data.name, ptr->Data.grade);
+    printf("\n<*------FIND STUDENT------*>\nNhap grade: ");
+    int fGrade;
+    scanf("%d", &fGrade);
+    Node *tptr = findStudentByGradeUseBinarySearch(head, fGrade, countStudentInLinkedList(head));
+    if(tptr == NULL)
+        printf("Can not find this grade in linked list!\n");
+    else
+        printf("Find student!\nName: %s\tGrade: %d\n", tptr->Data.name, tptr->Data.grade);
     printf("\n<*------REMOVE STUDENT------*>\nNhap id: ");
     char rId[ID_LENGTH];
     scanf("%s", rId);
