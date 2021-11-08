@@ -76,6 +76,18 @@ void changeGradeStudentById(Node **head, char *Id, int nGr)
     cur->Data.grade = nGr;
     return;
 }
+
+int countStudentInLinkedList(Node *head) 
+{
+    Node *cur = head;
+    int count = 0;
+    while (cur != NULL)
+    {
+        count++;
+        cur = cur->next;
+    }
+    return count;
+}
 void printList(Node *head)
 {
     for (Node *cur = head; cur != NULL; cur = cur->next)
