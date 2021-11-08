@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
         printf("Enter a number: ");
         scanf("%d", &arr[i]);
     }
+    
     int key;
     printf("Enter a number to search: ");
     scanf("%d", &key);
