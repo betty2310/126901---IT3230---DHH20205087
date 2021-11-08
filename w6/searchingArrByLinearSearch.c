@@ -40,7 +40,5 @@ int main(int argc, char* argv[])
     scanf("%d", &key);
 
     int pos = linearSentinelSearch(arr, 10, key);
-    
-
     return 0;
 }
