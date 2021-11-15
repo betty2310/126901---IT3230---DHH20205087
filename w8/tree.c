@@ -59,6 +59,6 @@ int main(int argc, char *argv[])
     root->right->left = makeNode(6);
     root->right->right = makeNode(7);
     print(root);
-    printf("\nHeight of Tree: %d", height(root));
+    printf("\nHeight(Depth) of Tree is: %d", height(root));
     return 0;
 }
