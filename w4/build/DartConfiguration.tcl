@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/betty/Dev/CProgramming-IT3230-126901/w4
-BuildDirectory: /home/betty/Dev/CProgramming-IT3230-126901/w4/build
+SourceDirectory: /home/betty/Dev/IT3230/w4
+BuildDirectory: /home/betty/Dev/IT3230/w4/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -14,7 +14,7 @@ CostDataFile:
 Site: Betty
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-x86_64-linux-gnu-g++-9
+BuildName: Linux-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/betty/Dev/CProgramming-IT3230-126901/w4"
+ConfigureCommand: "/usr/bin/cmake" "/home/betty/Dev/IT3230/w4"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
@@ -62,7 +62,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /bin/x86_64-linux-gnu-g++-9
+Compiler: /usr/bin/c++
 CompilerVersion: 9.3.0
 
 # Dynamic analysis (MemCheck)
