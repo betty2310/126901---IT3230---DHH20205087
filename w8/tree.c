@@ -9,7 +9,13 @@ typedef struct Node
 } Node;
 
 Node *root;
+int leaf = 0;
+int nodeCount = 0;
 
+int isLeaf(Node *node)
+{
+    return !node->left && !node->right;
+}
 Node *makeNode(int n)
 {
     Node *node = (Node *)malloc(sizeof(Node));
@@ -19,8 +25,9 @@ Node *makeNode(int n)
     return node;
 }
 
-void print(Node *root) {
-    if(root == NULL)
+void print(Node *root)
+{
+    if (root == NULL)
         return;
     printf("%d ", root->data);
     print(root->left);
@@ -29,15 +36,33 @@ void print(Node *root) {
 
 int height(Node *root)
 {
-    if(root == NULL)
+    if (root == NULL)
         return 0;
     int l = height(root->left);
     int r = height(root->right);
     return (l > r ? l : r) + 1;
 }
-int numberOfLeafs(Node *root);
-int numberOfInternalNode(Node *root);
-int count(Node *root);
+
+void travelTree(Node *root)
+{
+    if (root == NULL)
+        return;
+    leaf += isLeaf(root);
+    nodeCount++;
+    travelTree(root->left);
+    travelTree(root->right);
+}
+int numberOfLeafs(Node *root)
+{
+    return leaf;
+}
+int numberOfInternalNode(Node *root)
+{
+    return nodeCount - leaf;
+}
+int count(Node *root) {
+    return nodeCount;
+}
 
 int main(int argc, char *argv[])
 {
@@ -60,5 +85,10 @@ int main(int argc, char *argv[])
     root->right->right = makeNode(7);
     print(root);
     printf("\nHeight(Depth) of Tree is: %d", height(root));
+
+    travelTree(root);
+    printf("\nNumber of leafs: %d", numberOfLeafs(root));
+    printf("\nNumber of internal nodes: %d", numberOfInternalNode(root));
+    printf("\nNumber of nodes: %d", count(root));
     return 0;
 }
