@@ -14,7 +14,7 @@ CostDataFile:
 Site: Betty
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-c++
+BuildName: Linux-x86_64-linux-gnu-g++-9
 
 # Subprojects
 LabelsForSubprojects: 
@@ -62,7 +62,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /usr/bin/c++
+Compiler: /bin/x86_64-linux-gnu-g++-9
 CompilerVersion: 9.3.0
 
 # Dynamic analysis (MemCheck)
