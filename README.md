@@ -8,5 +8,5 @@
 * [x] Tuần 4
 * [x] Tuần 5
 * [x] Tuần 6
-* [ ] Tuần 7
-* [ ] Tuần 8
+* [x] Tuần 7
+* [x] Tuần 8
