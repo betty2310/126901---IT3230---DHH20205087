@@ -1,58 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "stack.h"
 
-void push(char data)
+NodeS *createStack(NodeS *p) {
+    p = (NodeS *)malloc(sizeof(NodeS));
+    p->link = NULL;
+    return p;
+}
+
+NodeS* push(NodeS *s, char data)
 {
-    struct Node* temp;
-    temp = (Node *)malloc(sizeof(Node));
+    struct NodeS* temp;
+    temp = (NodeS*)malloc(sizeof(NodeS));
     if (!temp)
     {
         printf("\nStack overflow!\n");
-        return;
+        return NULL;
     }
     temp->data = data;
-    temp->link = top;
-    top = temp;
+    temp->link = s;
+    s = temp;
+    return s;
 }
-int isEmpty()
+int isEmpty(NodeS *s)
 {
-    return top == NULL;
+    return s == NULL;
 }
-char peek()
+char peek(NodeS *s)
 {
-    if (!isEmpty())
-        return top->data;
+    if (!isEmpty(s))
+        return s->data;
     else
         return 0;
 }
-void pop()
+NodeS* pop(NodeS *s)
 {
-    Node* temp;
-    if (top == NULL)
+    NodeS* temp;
+    if (s == NULL)
     {
         printf("\nStack Underflow");
-        return;
+        return NULL;
     }
     else
     {
-        temp = top;
-        top = top->link;
+        temp = s;
+        s = s->link;
         temp->link = NULL;
         free(temp);
     }
+    return s;
 }
-void display()
+void display(NodeS *s)
 {
-    Node* temp;
-    if (top == NULL)
+    NodeS* temp;
+    if (s == NULL)
     {
         printf("\nStack Underflow");
         return;
     }
     else
     {
-        temp = top;
+        temp = s;
         while (temp != NULL)
         {
             printf("%c ", temp->data);

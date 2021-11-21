@@ -27,33 +27,33 @@ void infixToPostfix(char *infix, char *postfix)
     {
         if (infix[i] == '(')
         {
-            push(infix[i]);
+            p = push(p, infix[i]);
             continue;
         }
         if (infix[i] == ')')
         {
-            while (peek() != '(' && !isEmpty())
+            while (peek(p) != '(' && !isEmpty(p))
             {
-                postfix[index++] = peek();
-                pop();
+                postfix[index++] = peek(p);
+                p = pop(p);
             }
-            pop();
+            p = pop(p);
             continue;
         }
         if (isOperator(infix[i]))
         {
-            if (order(infix[i]) > order(peek()))
+            if (order(infix[i]) > order(peek(p)))
             {
-                push(infix[i]);
+                p = push(p, infix[i]);
             }
             else
             {
-                while (order(infix[i]) <= order(peek()))
+                while (order(infix[i]) <= order(peek(p)))
                 {
-                    postfix[index++] = peek();
-                    pop();
+                    postfix[index++] = peek(p);
+                    p = pop(p);
                 }
-                push(infix[i]);
+                p = push(p, infix[i]);
             }
             continue;
         }
@@ -63,9 +63,9 @@ void infixToPostfix(char *infix, char *postfix)
             continue;
         }
     }
-    while (!isEmpty())
+    while (!isEmpty(p))
     {
-        postfix[index++] = peek();
-        pop();
+        postfix[index++] = peek(p);
+        p = pop(p);
     }
 }

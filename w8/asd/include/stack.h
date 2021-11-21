@@ -1,13 +1,14 @@
-typedef struct Node
+typedef struct NodeS
 {
     char data;
-    struct Node* link;
-} Node ;
+    struct NodeS *link;
+} NodeS;
 
-Node* top;
+extern NodeS *p, *q;
 
-void push(char data);
-int isEmpty();
-char peek();
-void pop();
-void display();
+NodeS *createStack(NodeS *p);
+NodeS *push(NodeS *s, char data);
+int isEmpty(NodeS *s);
+char peek(NodeS *s);
+NodeS *pop(NodeS *s);
+void display(NodeS *s);
