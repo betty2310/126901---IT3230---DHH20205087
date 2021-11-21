@@ -6,7 +6,7 @@ enable_testing()
 
 include_directories(include)
 
-set(SOURCES src/main.c src/stack.c src/postfix.c)
+set(SOURCES src/main.c src/stack.c src/postfix.c src/tree.c)
 add_executable(expressTree ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
