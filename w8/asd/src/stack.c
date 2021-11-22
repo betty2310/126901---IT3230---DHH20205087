@@ -3,16 +3,16 @@
 
 #include "stack.h"
 
-NodeS *createStack(NodeS *p) {
-    p = (NodeS *)malloc(sizeof(NodeS));
+stackC *createStack(stackC *p) {
+    p = (stackC *)malloc(sizeof(stackC));
     p->link = NULL;
     return p;
 }
 
-NodeS* push(NodeS *s, char data)
+stackC* push(stackC *s, char data)
 {
-    struct NodeS* temp;
-    temp = (NodeS*)malloc(sizeof(NodeS));
+    struct stackC* temp;
+    temp = (stackC*)malloc(sizeof(stackC));
     if (!temp)
     {
         printf("\nStack overflow!\n");
@@ -23,20 +23,20 @@ NodeS* push(NodeS *s, char data)
     s = temp;
     return s;
 }
-int isEmpty(NodeS *s)
+int isEmpty(stackC *s)
 {
     return s == NULL;
 }
-char peek(NodeS *s)
+char peek(stackC *s)
 {
     if (!isEmpty(s))
         return s->data;
     else
         return 0;
 }
-NodeS* pop(NodeS *s)
+stackC* pop(stackC *s)
 {
-    NodeS* temp;
+    stackC* temp;
     if (s == NULL)
     {
         printf("\nStack Underflow");
@@ -51,9 +51,9 @@ NodeS* pop(NodeS *s)
     }
     return s;
 }
-void display(NodeS *s)
+void display(stackC *s)
 {
-    NodeS* temp;
+    stackC* temp;
     if (s == NULL)
     {
         printf("\nStack Underflow");
