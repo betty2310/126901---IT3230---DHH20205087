@@ -2,7 +2,7 @@
 
 #include "tree.h"
 
-NodeT *makeNode(int n)
+NodeT *makeNode(char n)
 {
     NodeT *node = (NodeT *)malloc(sizeof(NodeT));
     node->data = n;

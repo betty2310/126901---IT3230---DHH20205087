@@ -1,7 +1,7 @@
-typedef struct NodeT
+typedef struct NodeTree
 {
-    int data;
+    char data;
     struct Node *left, *right;
 } NodeT;
 extern NodeT *root;
-NodeT *makeNode(int n);
+NodeT *makeNode(char n);
