@@ -19,8 +19,8 @@ int isEmptyNodeTree(stackT *s);
 NodeT* peekNodeTree(stackT *s);
 stackT *popNodeTree(stackT *s);
 
-stackC *p;
-stackT *st;
+stackC *p; // use to store the postfix expression
+stackT *st; //use to store the tree
 NodeT *root;
 
 int main(int argc, char *argv[])
