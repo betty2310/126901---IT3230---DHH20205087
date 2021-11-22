@@ -21,10 +21,12 @@ stackT *popNodeTree(stackT *s);
 
 stackC *p;
 stackT *st;
+NodeT *root;
 
 int main(int argc, char *argv[])
 {
     p = createStack(p);
+    st = createStackNodeTree(st);
 
     char infix[255];
     scanf("%s", infix);
@@ -39,12 +41,22 @@ int main(int argc, char *argv[])
         t = makeNode(postfix[i]);
         if (!isOperator(postfix[i]))
         {
+            st = pushNodeTree(st, t);
         }
         else {
-            
+            r = peekNodeTree(st);
+            st = popNodeTree(st);
+            l = peekNodeTree(st);
+            st = popNodeTree(st);
+            t->data = postfix[i];
+            t->left = l;
+            t->right = r;
+            st = pushNodeTree(st, t);
         }
+        root = t;
     }
 
+    showTree(root);
     return 0;
 }
 
@@ -66,6 +78,7 @@ stackT *pushNodeTree(stackT *s, NodeT *c)
     }
     tmp->data = c;
     tmp->link = s;
+    s = tmp;
     return s;
 }
 int isEmptyNodeTree(stackT *s)
@@ -74,7 +87,7 @@ int isEmptyNodeTree(stackT *s)
 }
 NodeT* peekNodeTree(stackT *s)
 {
-    if(isEmptyNodeTree(s))
+    if(!isEmptyNodeTree(s))
     {
         return s->data;
     }
