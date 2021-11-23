@@ -1,11 +1,11 @@
 # Binary Search Tree
 
-Funtion (to do):
+> Funtion (to do):
 
-[x] search
-[x] insert
-[x] delete node
-[] delete tree
+* [x] search
+* [x] insert
+* [x] delete node
+* [ ] delete tree
 
 ### Instructions
 
