@@ -21,3 +21,6 @@ CTestTestfile.cmake
 # Exe
 *.exe
 *.out
+
+/.ccls-cache
+.ccls
