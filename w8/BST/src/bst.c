@@ -3,9 +3,11 @@
 
 #include "BST.h"
 
-BTree *makeNode(int _data) {
+BTree *makeNode(int _data)
+{
     BTree *newNode = (BTree *)malloc(sizeof(BTree));
-    if(newNode == NULL) {
+    if (newNode == NULL)
+    {
         printf("Error: Out of memory\n");
         return NULL;
     }
@@ -15,40 +17,81 @@ BTree *makeNode(int _data) {
     return newNode;
 }
 
-BTree *binarySearch(BTree *root, int data) {
-    if(root == NULL) {
+BTree *binarySearch(BTree *root, int data)
+{
+    if (root == NULL)
+    {
         return NULL;
     }
-    if(root->data == data) {
+    if (root->data == data)
+    {
         return root;
     }
-    if(data < root->data) {
+    if (data < root->data)
+    {
         return binarySearch(root->left, data);
     }
     return binarySearch(root->right, data);
 }
 
-BTree *insert(BTree *node, int _data) {
+BTree *insert(BTree *node, int _data)
+{
     BTree *newNode = makeNode(_data);
-    if(node == NULL) {
+    if (node == NULL)
+    {
         return newNode;
     }
-    if(_data < node->data)
+    if (_data < node->data)
     {
         node->left = insert(node->left, _data);
     }
-    else if(_data > node->data)
+    else if (_data > node->data)
     {
         node->right = insert(node->right, _data);
-    } 
-    else {
+    }
+    else
+    {
         printf("Error: Duplicate data %d\n", _data);
     }
     return node;
 }
-void deleteNode(BTree *root, int data);
-void deleteBtree(BTree *root) {
-    if(root == NULL) {
+BTree *deleteNode(BTree *root, int data)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+    if (data < root->data)
+    {
+        deleteNode(root->left, data);
+    }
+    else if (data > root->data)
+    {
+        deleteNode(root->right, data);
+    }
+    else
+    {
+        // root has no child or one child on left or right
+        if (root->left == NULL)
+        {
+            BTree *temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            BTree *temp = root->left;
+            free(root);
+            return temp;
+        }
+        // root has two childen
+    }
+    return root;
+}
+void deleteBtree(BTree *root)
+{
+    if (root == NULL)
+    {
         return;
     }
     deleteBtree(root->left);
@@ -56,8 +99,10 @@ void deleteBtree(BTree *root) {
     free(root);
 }
 
-void printBTree(BTree *root) {
-    if(root == NULL) {
+void printBTree(BTree *root)
+{
+    if (root == NULL)
+    {
         return;
     }
     printf("%d ", root->data);
