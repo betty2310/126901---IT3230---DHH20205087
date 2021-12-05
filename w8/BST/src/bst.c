@@ -55,6 +55,7 @@ BTree *insert(BTree *node, int _data)
     }
     return node;
 }
+
 BTree *deleteNode(BTree *root, int data)
 {
     if (root == NULL)
@@ -84,7 +85,9 @@ BTree *deleteNode(BTree *root, int data)
             free(root);
             return temp;
         }
-        // root has two childen
+        else { //root has two children
+
+        }
     }
     return root;
 }
