@@ -23,21 +23,21 @@ int main(int argc, char* argv[])
     root = insert(root, 8);
     printBTree(root);
 
-    // printf("\nEnter number to search: ");
-    // int num;
-    // scanf("%d", &num);
-    // BTree *ans = binarySearch(root, num);
-    // if(ans != NULL)
-    //     printf("Found %d\n", ans->data);
-    // else
-    //     printf("Not found\n");
+    printf("\nEnter number to search: ");
+    int num;
+    scanf("%d", &num);
+    BTree *ans = binarySearch(root, num);
+    if(ans != NULL)
+        printf("Found %d\n", ans->data);
+    else
+        printf("Not found\n");
 
-    root = insert(root, 6);
-    printf("\n");
-    printBTree(root);
-    root = deleteNode(root, 6);
-    printf("\n");
-    printBTree(root);
+    // root = insert(root, 6);
+    // printf("\n");
+    // printBTree(root);
+    // root = deleteNode(root, 6);
+    // printf("\n");
+    // printBTree(root);
     // deleteBtree(root);
 
     return 0;

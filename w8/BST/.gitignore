@@ -3,3 +3,5 @@
 /.ccls-cache
 .ccls
 /.cache
+test.c
+test
