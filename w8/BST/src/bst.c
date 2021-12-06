@@ -55,40 +55,60 @@ BTree *insert(BTree *node, int _data)
     }
     return node;
 }
-
+BTree *leftMostNode(BTree *node) {
+    BTree *cur = node;
+    while(cur!=NULL && cur->left != NULL) {
+        cur = cur->left;
+    }
+    return cur;
+}
 BTree *deleteNode(BTree *root, int data)
 {
     if (root == NULL)
-    {
         return NULL;
-    }
-    if (data < root->data)
+    BTree *par, *cur = root;
+    while(cur != NULL && cur->data != data)
     {
-        deleteNode(root->left, data);
+        par = cur;
+        if(data < cur->data)
+            cur = cur->left;
+        else
+            cur = cur->right;
     }
-    else if (data > root->data)
+    if(cur->left == NULL && cur->right == NULL)
     {
-        deleteNode(root->right, data);
-    }
-    else
-    {
-        // root has no child or one child on left or right
-        if (root->left == NULL)
+        if(cur != root)
         {
-            BTree *temp = root->right;
-            free(root);
-            return temp;
+            if(par->left == cur)
+                par->left == NULL;
+            else
+                par->right == NULL;
         }
-        else if (root->right == NULL)
+        else
+            root == NULL;
+        free(cur);
+    }
+    else if(cur->left && cur->right)
+    {
+        BTree *node = leftMostNode(cur);
+        int key = node->data;
+        deleteNode(root, node->data);
+        cur->data = key;
+    }
+    else {
+        BTree *child = (cur->left) ? cur->left : cur->right;
+        if(cur != root)
         {
-            BTree *temp = root->left;
-            free(root);
-            return temp;
+            if(par->left ==cur)
+                par->left = NULL;
+            else
+                par->right = NULL;
         }
-        else { //root has two children
+        else
+            root = child;
+        free(cur);
+    }
 
-        }
-    }
     return root;
 }
 void deleteBtree(BTree *root)
