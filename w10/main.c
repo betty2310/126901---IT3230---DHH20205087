@@ -2,6 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+void quickSort(int a[], int left, int right)
+{
+    int pivot = a[(left + right) / 2];
+    int i = left, j = right;
+    while(i < j) 
+    {
+        while(a[i] < pivot)
+            i++;
+        while(a[j] > pivot)
+            j--;
+    }
+}
 void selectionSort(int a[], int len) {
     for (int i = 0; i < len;++i) {
         int min = i;
