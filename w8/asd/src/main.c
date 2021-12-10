@@ -2,29 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "stack.h"
 #include "postfix.h"
+#include "stack.h"
 #include "tree.h"
 
-typedef struct stackNodeTree
-{
+typedef struct stackNodeTree {
     NodeT *data;
     struct stackNodeTree *link;
 } stackT;
 
-
 stackT *createStackNodeTree(stackT *p);
 stackT *pushNodeTree(stackT *s, NodeT *c);
 int isEmptyNodeTree(stackT *s);
-NodeT* peekNodeTree(stackT *s);
+NodeT *peekNodeTree(stackT *s);
 stackT *popNodeTree(stackT *s);
 
-stackC *p; // use to store the postfix expression
-stackT *st; //use to store the tree
+stackC *p;   // use to store the postfix expression
+stackT *st;  // use to store the tree
 NodeT *root;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     p = createStack(p);
     st = createStackNodeTree(st);
 
@@ -36,14 +33,11 @@ int main(int argc, char *argv[])
 
     int len2 = strlen(postfix);
     NodeT *l, *r, *t;
-    for (int i = 0; i < len2; ++i)
-    {
+    for (int i = 0; i < len2; ++i) {
         t = makeNode(postfix[i]);
-        if (!isOperator(postfix[i]))
-        {
+        if (!isOperator(postfix[i])) {
             st = pushNodeTree(st, t);
-        }
-        else {
+        } else {
             r = peekNodeTree(st);
             st = popNodeTree(st);
             l = peekNodeTree(st);
@@ -60,19 +54,16 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-stackT *createStackNodeTree(stackT *st)
-{
+stackT *createStackNodeTree(stackT *st) {
     st = (stackT *)malloc(sizeof(stackT));
     st->data = NULL;
     st->link = NULL;
     return st;
 }
-stackT *pushNodeTree(stackT *s, NodeT *c)
-{
+stackT *pushNodeTree(stackT *s, NodeT *c) {
     stackT *tmp;
     tmp = (stackT *)malloc(sizeof(stackT));
-    if(!tmp) 
-    {
+    if (!tmp) {
         printf("\nStack overflow!\n");
         return NULL;
     }
@@ -81,26 +72,18 @@ stackT *pushNodeTree(stackT *s, NodeT *c)
     s = tmp;
     return s;
 }
-int isEmptyNodeTree(stackT *s)
-{
-    return s == NULL;
-}
-NodeT* peekNodeTree(stackT *s)
-{
-    if(!isEmptyNodeTree(s))
-    {
+int isEmptyNodeTree(stackT *s) { return s == NULL; }
+NodeT *peekNodeTree(stackT *s) {
+    if (!isEmptyNodeTree(s)) {
         return s->data;
-    }
-    else
+    } else
         return NULL;
 }
-stackT *popNodeTree(stackT *s)
-{
-    if(s == NULL) {
+stackT *popNodeTree(stackT *s) {
+    if (s == NULL) {
         printf("\nStack underflow!\n");
         return NULL;
-    }
-    else {
+    } else {
         stackT *tmp;
         tmp = s;
         s = s->link;
