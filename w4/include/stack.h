@@ -1,10 +1,9 @@
-typedef struct Node
-{
+typedef struct Node {
     char data;
     struct Node* link;
-} Node ;
+} Node;
 
-Node* top;
+extern Node* top;
 
 void push(char data);
 int isEmpty();
