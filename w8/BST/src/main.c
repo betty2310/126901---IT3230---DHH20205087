@@ -4,8 +4,7 @@
 
 #include "BST.h"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char *argv[]) {
     /*
                   7
                 /   \
@@ -27,18 +26,16 @@ int main(int argc, char* argv[])
     int num;
     scanf("%d", &num);
     BTree *ans = binarySearch(root, num);
-    if(ans != NULL)
+    if (ans != NULL)
         printf("Found %d\n", ans->data);
     else
         printf("Not found\n");
 
     // root = insert(root, 6);
-    // printf("\n");
     // printBTree(root);
     // root = deleteNode(root, 6);
-    // printf("\n");
     // printBTree(root);
-    // deleteBtree(root);
 
     return 0;
 }
+
