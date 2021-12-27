@@ -10,9 +10,9 @@
 * [x] Tuần 6
 * [x] Tuần 7
 * [x] Tuần 8
-* [ ] Tuần 9
-* [ ] Tuần 10
-* [ ] Tuần 11 
+* [x] Tuần 9
+* [x] Tuần 10
+* [x] Tuần 11 
 * [ ] Tuần 12 
 * [ ] Tuần 13
 * [ ] Tuần 14
