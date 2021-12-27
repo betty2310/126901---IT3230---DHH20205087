@@ -95,18 +95,4 @@ void quickSort(int a[], int left, int right) {
         quickSort(a, pi + 1, right);
     }
 }
-int main() {
-    int a[] = {2, 10, 1, 12, 8, 7, 11};
-    int size = 7;
-    for (int i = 0; i < size; ++i) {
-        printf("%d ", a[i]);
-    }
-    printf("\nAfter sort:\n");
-    // insertionSort(a, size);
-    // selectionSort(a, size);
-    // mergeSort(a, 0, size);
-    quickSort(a, 0, size - 1);
-    for (int i = 0; i < size; ++i) {
-        printf("%d ", a[i]);
-    }
-}
+
