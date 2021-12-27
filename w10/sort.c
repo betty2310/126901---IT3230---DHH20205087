@@ -28,25 +28,25 @@ void selectionSort(int a[], int size) {
         a[index] = temp;
     }
 }
-void merge(int arr[], int l, int m, int r) {
+void merge(int a[], int l, int m, int r) {
     int n1 = m - l + 1;
     int n2 = r - m;
 
     int L[n1], R[n2];
 
-    // copy arr to 2 sub arr left L and right R
-    for (int i = 0; i < n1; i++) L[i] = arr[l + i];
-    for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+    // copy a to 2 sub a left L and right R
+    for (int i = 0; i < n1; i++) L[i] = a[l + i];
+    for (int j = 0; j < n2; j++) R[j] = a[m + 1 + j];
 
-    int i = 0;  // Initial index of first subarray
-    int j = 0;  // Initial index of second subarray
-    int k = l;  // Initial index of merged subarray
+    int i = 0;  // Initial index of first subaay
+    int j = 0;  // Initial index of second subaay
+    int k = l;  // Initial index of merged subaay
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
-            arr[k] = L[i];
+            a[k] = L[i];
             i++;
         } else {
-            arr[k] = R[j];
+            a[k] = R[j];
             j++;
         }
         k++;
@@ -54,12 +54,12 @@ void merge(int arr[], int l, int m, int r) {
 
     // Copy not cac phan tu con lai neu con o ca 2 L va R
     while (i < n1) {
-        arr[k] = L[i];
+        a[k] = L[i];
         i++;
         k++;
     }
     while (j < n2) {
-        arr[k] = R[j];
+        a[k] = R[j];
         j++;
         k++;
     }
@@ -95,4 +95,31 @@ void quickSort(int a[], int left, int right) {
         quickSort(a, pi + 1, right);
     }
 }
+void adjust(int a[], int n, int i)
+{
+    int largest = i; 
+    int l = 2 * i + 1; 
+    int r = 2 * i + 2; 
+    if (l < n && a[l] > a[largest])
+        largest = l;
+    if (r < n && a[r] > a[largest])
+        largest = r;
+    if (largest != i) {
+        int tmp = a[i];
+        a[i] = a[largest];
+        a[largest] = tmp;
+        adjust(a, n, largest);
+    }
+}
 
+void heapSort(int a[], int n)
+{
+    for (int i = n / 2 - 1; i >= 0; i--)
+        adjust(a, n, i);
+    for (int i = n - 1; i > 0; i--) {
+        int tmp = a[0];
+        a[0] = a[i];
+        a[i] = tmp;
+        adjust(a, i, 0);
+    }
+}
