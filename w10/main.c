@@ -1,39 +1,82 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
-void quickSort(int a[], int left, int right)
+#include "sort.h"
+
+#define N 500
+#define MAX_RANGE 10000
+
+int main(int argc, char *argv[])
 {
-    int pivot = a[(left + right) / 2];
-    int i = left, j = right;
-    while(i < j) 
+    FILE *fn;
+    int a[N + 1];
+    fn = fopen("number.txt", "w");
+    for (int i = 0; i < N; ++i)
     {
-        while(a[i] < pivot)
-            i++;
-        while(a[j] > pivot)
-            j--;
+        int num = (rand() % MAX_RANGE) + 1;
+        fprintf(fn, "%d ", num);
+        a[i] = num;
     }
-}
-void selectionSort(int a[], int len) {
-    for (int i = 0; i < len;++i) {
-        int min = i;
-        for (int j = i + 1; j < len;++j) {
-            if (a[j] < a[min]) 
-                min = j;
-        }
-        int tmp = a[i];
-        a[i] = a[min];
-        a[min] = tmp;
+    int c;
+    printf("Enter choice: ");
+    scanf("%d", &c);
+    switch (c)
+    {
+    case 1:
+    {
+        printf("You select insertion Sort\n");
+        clock_t t;
+        t = clock();
+        insertionSort(a, N);
+        t = clock() - t;
+        double time_taken = ((double)t) / 1000000; // in seconds
+        printf("took %lf s", time_taken);
+        break;
     }
-}
-
-int main(int argc, char* argv[])
-{
-    int a[] = {12, 3, 4, 1, 19, 7};
-    int len = 6;
-    selectionSort(a, 6);
-    for (int i = 0; i < len; ++i) {
-        printf("%d ", a[i]);
+    case 2:
+    {
+        printf("\nYou select selection Sort\n");
+        clock_t t;
+        t = clock();
+        selectionSort(a, N);
+        t = clock() - t;
+        double time_taken = ((double)t) / 1000000; // in seconds
+        printf("took %lf s", time_taken);
+        break;
     }
+    case 3:
+    {
+        printf("\nYou select merge Sort\n");
+        clock_t t;
+        t = clock();
+        mergeSort(a, 0, N);
+        t = clock() - t;
+        double time_taken = ((double)t) / 1000000; // in seconds
+        printf("took %lf s", time_taken);
+        break;
+    }
+    case 4:
+    {
+        printf("\nYou select quick Sort\n");
+        clock_t t;
+        t = clock();
+        quickSort(a, 0, N - 1);
+        t = clock() - t;
+        double time_taken = ((double)t) / 1000000; // in seconds
+        printf("took %lf s", time_taken);
+        break;
+    }
+    default:
+        printf("Error!\n");
+        break;
+    }
+    fprintf(fn, "\n\n---------\n\n");
+    for (int i = 0; i < N; ++i)
+    {
+        fprintf(fn, "%d ", a[i]);
+    }
+    fclose(fn);
     return 0;
 }
