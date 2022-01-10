@@ -4,7 +4,7 @@ Make a random string that has about 2000 characters consisting of a set of chara
     –set of characters: abcdef
     –string: abcadacaeeeffaadbfacddedcedfbeccae...
 •Write the program that searches the pattern, for example “aadbf”, from the string.
-•Note: use Simple searching string Algorithm
+•Note: use Boyer-Moore Algorithm
 */
 
 #include <stdio.h>
