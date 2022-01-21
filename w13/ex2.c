@@ -33,6 +33,7 @@ int boyerMooreSearch(char *str, char *search) {
 
     return -1;
 }
+
 int main() {
     char setOfChar[] = "abcdef";
     char str[SIZE];
